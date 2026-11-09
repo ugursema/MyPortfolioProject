@@ -12,19 +12,19 @@ Proje, katmanlı mimari prensiplerine uygun olarak **ASP.NET Core 6.0 MVC** ve *
 
 | Ana Sayfa | Hakkımda |
 | :---: | :---: |
-| ![Ana Sayfa](wwwroot/images/uiHomePage.png) | ![Hakkımda](wwwroot/images/uiAbout.png) |
+| ![Ana Sayfa](MyPortfolioProject/wwwroot/images/uiHomePage.png) | ![Hakkımda](MyPortfolioProject/wwwroot/images/uiAbout.png) |
 
 | Projeler | Yetenekler |
 | :---: | :---: |
-| ![Projeler](wwwroot/images/uiProject.png) | ![Yetenekler](wwwroot/images/uiSkill.png) |
+| ![Projeler](MyPortfolioProject/wwwroot/images/uiProject.png) | ![Yetenekler](MyPortfolioProject/wwwroot/images/uiSkill.png) |
 
 | Eğitim | Deneyim |
 | :---: | :---: |
-| ![Eğitim](wwwroot/images/uiEducation.png) | ![Deneyim](wwwroot/images/uiExperience.png) |
+| ![Eğitim](MyPortfolioProject/wwwroot/images/uiEducation.png) | ![Deneyim](MyPortfolioProject/wwwroot/images/uiExperience.png) |
 
 | Sertifikalar | İletişim |
 | :---: | :---: |
-| ![Sertifikalar](wwwroot/images/uiCertifica.png) | ![İletişim](wwwroot/images/uiContact.png) |
+| ![Sertifikalar](MyPortfolioProject/wwwroot/images/uiCertifica.png) | ![İletişim](MyPortfolioProject/wwwroot/images/uiContact.png) |
 
 ---
 
@@ -32,23 +32,23 @@ Proje, katmanlı mimari prensiplerine uygun olarak **ASP.NET Core 6.0 MVC** ve *
 
 | Admin Dashboard | Proje Yönetimi |
 | :---: | :---: |
-| ![Dashboard](wwwroot/images/Homepage.png) | ![Projeler](wwwroot/images/Project.png) |
+| ![Dashboard](MyPortfolioProject/wwwroot/images/Homepage.png) | ![Projeler](MyPortfolioProject/wwwroot/images/Project.png) |
 
 | Hakkımda Yönetimi | Yetenek Yönetimi |
 | :---: | :---: |
-| ![Hakkımda](wwwroot/images/About.png) | ![Yetenekler](wwwroot/images/Skill.png) |
+| ![Hakkımda](MyPortfolioProject/wwwroot/images/About.png) | ![Yetenekler](MyPortfolioProject/wwwroot/images/Skill.png) |
 
 | Eğitim Yönetimi | Deneyim Yönetimi |
 | :---: | :---: |
-| ![Eğitim](wwwroot/images/Education.png) | ![Deneyim](wwwroot/images/Experience.png) |
+| ![Eğitim](MyPortfolioProject/wwwroot/images/Education.png) | ![Deneyim](MyPortfolioProject/wwwroot/images/Experience.png) |
 
 | Mesajlar | Profil |
 | :---: | :---: |
-| ![Mesajlar](wwwroot/images/Message.png) | ![Profil](wwwroot/images/Profile.png) |
+| ![Mesajlar](MyPortfolioProject/wwwroot/images/Message.png) | ![Profil](MyPortfolioProject/wwwroot/images/Profile.png) |
 
 | Ayarlar |
 | :---: |
-| ![Ayarlar](wwwroot/images/Setting.png) |
+| ![Ayarlar](MyPortfolioProject/wwwroot/images/Setting.png) |
 
 ---
 
@@ -64,11 +64,11 @@ Proje, katmanlı mimari prensiplerine uygun olarak **ASP.NET Core 6.0 MVC** ve *
 
 ## 💻 Kullanılan Teknolojiler
 
-* **Backend:** ASP.NET Core 6.0 MVC
-* **ORM & Database:** Entity Framework Core (Code-First / DB-First), Microsoft SQL Server (MSSQL)
-* **Güvenlik & Yetkilendirme:** ASP.NET Core Authentication & Cookie tabanlı Authorize yetkilendirmesi (`[Authorize]`, `[Area("Admin")]`)
-* **Frontend:** Bootstrap 5, HTML5, CSS3, JavaScript, Bootstrap Icons
-* **Mimari Yapılar:** Area Mimarisi, LINQ Sorguları, ViewComponent, DTO & Model Yönetimi, ViewBag Veri Taşıma
+- **Backend:** ASP.NET Core 6.0 MVC
+- **ORM & Database:** Entity Framework Core (Code-First / DB-First), Microsoft SQL Server (MSSQL)
+- **Güvenlik & Yetkilendirme:** ASP.NET Core Authentication & Cookie tabanlı Authorize yetkilendirmesi (`[Authorize]`, `[Area("Admin")]`)
+- **Frontend:** Bootstrap 5, HTML5, CSS3, JavaScript, Bootstrap Icons
+- **Mimari Yapılar:** Area Mimarisi, LINQ Sorguları, ViewComponent, DTO & Model Yönetimi, ViewBag Veri Taşıma
 
 ---
 
@@ -77,15 +77,20 @@ Proje, katmanlı mimari prensiplerine uygun olarak **ASP.NET Core 6.0 MVC** ve *
 ```text
 MyPortfolioProject/
 │
-├── Areas/
-│   └── Admin/                 # Admin Yönetim Paneli (Dashboard, Project, Skill, Message vb.)
-│       ├── Controllers/
-│       └── Views/
+├── MyPortfolioProject/
+│   ├── Areas/
+│   │   └── Admin/
+│   │       ├── Controllers/
+│   │       └── Views/
+│   │
+│   ├── Controllers/
+│   ├── Entities / Models/
+│   ├── Context/
+│   ├── ViewComponents/
+│   ├── wwwroot/
+│   │   └── images/
+│   │
+│   └── Program.cs
 │
-├── Controllers/               # Ön Yüz (Portfolio) Controller'ları
-├── Entities / Models/         # Entity Sınıfları ve ViewModel Yapıları
-├── Context/                   # PortfolioContext (EF Core DbContext)
-├── ViewComponents/            # Modüler İstatistik ve İlerleme Bileşenleri
-├── wwwroot/
-│   └── images/                # Ekran Görüntüleri ve Görsel Varlıklar
-└── Program.cs                 # Dependency Injection ve Pipeline Yapılandırması
+└── README.md
+```
