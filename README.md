@@ -12,7 +12,7 @@ Proje, katmanlı mimari prensiplerine uygun olarak **ASP.NET Core 6.0 MVC** ve *
 
 | Ana Sayfa | Hakkımda |
 | :---: | :---: |
-| ![Ana Sayfa](wwwroot/images/UıHomePage.png) | ![Hakkımda](wwwroot/images/uiAbout.png) |
+| ![Ana Sayfa](wwwroot/images/uiHomePage.png) | ![Hakkımda](wwwroot/images/uiAbout.png) |
 
 | Projeler | Yetenekler |
 | :---: | :---: |
@@ -48,7 +48,7 @@ Proje, katmanlı mimari prensiplerine uygun olarak **ASP.NET Core 6.0 MVC** ve *
 
 | Ayarlar |
 | :---: |
-| ![Ayarlar](wwwroot/images/setting.png) |
+| ![Ayarlar](wwwroot/images/Setting.png) |
 
 ---
 
