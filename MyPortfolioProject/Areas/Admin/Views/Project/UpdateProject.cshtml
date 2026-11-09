@@ -1,0 +1,37 @@
+﻿@model MyPortfolioProject.Entities.Project
+@{
+    ViewData["Title"] = "UpdateProject";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <br />
+    <h2>Proje Güncelleme Sayfası</h2>
+    <br />
+    <form method="post">
+        <input type="hidden" asp-for="ProjectId" />
+
+        <label>Proje Başlığı</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+
+        <label>Açıklama</label>
+        <textarea asp-for="Description" rows="4" class="form-control"></textarea>
+        <br />
+
+        <label>GitHub Adresi</label>
+        <input type="text" asp-for="GitHubUrl" class="form-control" />
+        <br />
+
+        <label>Proje Görseli URL</label>
+        <input type="text" asp-for="CoverImageUrl" class="form-control" />
+        <br />
+
+        <label>Proje Kategorisi</label>
+        @Html.DropDownListFor(x => x.CategoryId, (SelectList)ViewBag.v, "Kategori Seçiniz", new { @class = "form-control" })
+        <br />
+
+        <button class="btn btn-success">Değişiklikleri Kaydet</button>
+        <a href="/Admin/Project/ProjectList" class="btn btn-secondary">Vazgeç</a>
+    </form>
+</div>

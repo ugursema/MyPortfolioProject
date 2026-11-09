@@ -1,0 +1,80 @@
+﻿@model List<MyPortfolioProject.Entities.Message>
+
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+<div class="container">
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Gönderici</th>
+            <th>Email</th>
+            <th>Konu</th>
+            <th>Tarih</th>
+            <th>Mesajı Aç</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MessageId</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@item.SendDate.ToString("dd MMM yyyy")</td>
+                <td>
+                    <button type="button" class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#centeredModal"
+                            data-sender="@item.NameSurname"
+                            data-subject="@item.Subject"
+                            data-content="@item.MessageDetail">
+                        Mesajı Aç
+                    </button>
+                </td>
+                <td><a href="/Admin/Message/DeleteMessage/@item.MessageId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Admin/Message/UpdateMessage/@item.MessageId" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    @*    MODEL TABLO DIŞINCA CONTAİNER İÇİNDE OLMALI
+ *@    <div class="modal fade" id="centeredModal" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="centeredModalLabel">Mesaj</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Gönderen:</strong> <span id="modalSender"></span></p>
+                    <p><strong>Konu:</strong> <span id="modalSubject"></span></p>
+                    <hr />
+                    <p><strong>Mesaj İçeriği:</strong></p>
+                    <p id="modalContent" class="text-secondary"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        const centeredModal = document.getElementById('centeredModal');
+        centeredModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+
+            const sender = button.getAttribute('data-sender');
+            const subject = button.getAttribute('data-subject');
+            const content = button.getAttribute('data-content');
+
+            document.getElementById('modalSender').textContent = sender;
+            document.getElementById('modalSubject').textContent = subject;
+            document.getElementById('modalContent').textContent = content;
+        });
+    </script>
+}

@@ -1,0 +1,38 @@
+﻿<!-- Right: Contact Form -->
+<div class="col-lg-7 reveal-on-scroll">
+    <div class="contact-form-card">
+        <!-- Formun gönderileceği Controller ve Action'ı belirliyoruz -->
+        <form asp-controller="Default" asp-action="SendMessage" method="post">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="contactFullName" class="form-label">Adınız Soyadınız *</label>
+                    <!-- name alanı Message sınıfındaki NameSurname ile birebir aynı olmalı -->
+                    <input type="text" class="form-control" id="contactFullName" name="NameSurname" placeholder="Örn: Ahmet Yılmaz" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="contactEmail" class="form-label">E-posta Adresiniz *</label>
+                    <input type="email" class="form-control" id="contactEmail" name="Email" placeholder="Örn: ahmet@example.com" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="contactSubject" class="form-label">Konu *</label>
+                    <input type="text" class="form-control" id="contactSubject" name="Subject" placeholder="Örn: Proje İş Birliği" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="contactMessage" class="form-label">Mesajınız *</label>
+                    <!-- name alanı Message sınıfındaki MessageDetail ile birebir aynı olmalı -->
+                    <textarea class="form-control" id="contactMessage" name="MessageDetail" rows="5" placeholder="Mesajınızı buraya yazabilirsiniz..." required></textarea>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn-custom-primary w-100 justify-content-center py-3">
+                        <i class="bi bi-send-fill"></i> Mesaj Gönder
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\About.png" />
+    <Content Remove="wwwroot\images\Education.png" />
+    <Content Remove="wwwroot\images\Experience.png" />
+    <Content Remove="wwwroot\images\Homepage.png" />
+    <Content Remove="wwwroot\images\Message.png" />
+    <Content Remove="wwwroot\images\Profile.png" />
+    <Content Remove="wwwroot\images\Project.png" />
+    <Content Remove="wwwroot\images\Setting.png" />
+    <Content Remove="wwwroot\images\Skill.png" />
+    <Content Remove="wwwroot\images\uiAbout.png" />
+    <Content Remove="wwwroot\images\uiCertifica.png" />
+    <Content Remove="wwwroot\images\uiContact.png" />
+    <Content Remove="wwwroot\images\uiEducation.png" />
+    <Content Remove="wwwroot\images\uiExperience.png" />
+    <Content Remove="wwwroot\images\uiHomePage.png" />
+    <Content Remove="wwwroot\images\uiProject.png" />
+    <Content Remove="wwwroot\images\uiSkill.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="ViewCompanents\AdminViewComponents\" />
+    <Folder Include="ViewCompanents\StatisticViewComponents\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\About.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\images\Education.png" />
+    <None Include="wwwroot\images\Experience.png" />
+    <None Include="wwwroot\images\Homepage.png" />
+    <None Include="wwwroot\images\Message.png" />
+    <None Include="wwwroot\images\Profile.png" />
+    <None Include="wwwroot\images\Project.png" />
+    <None Include="wwwroot\images\Setting.png" />
+    <None Include="wwwroot\images\Skill.png" />
+    <None Include="wwwroot\images\uiAbout.png" />
+    <None Include="wwwroot\images\uiCertifica.png" />
+    <None Include="wwwroot\images\uiContact.png" />
+    <None Include="wwwroot\images\uiEducation.png" />
+    <None Include="wwwroot\images\uiExperience.png" />
+    <None Include="wwwroot\images\uiHomePage.png" />
+    <None Include="wwwroot\images\uiProject.png" />
+    <None Include="wwwroot\images\uiSkill.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\files\sema-ugur-cv.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

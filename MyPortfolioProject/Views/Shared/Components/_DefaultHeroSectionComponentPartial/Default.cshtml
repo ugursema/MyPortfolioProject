@@ -1,0 +1,60 @@
+﻿@model List<MyPortfolioProject.Entities.HeroSection>
+
+<!-- Hero Section -->
+<section id="home">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Left Content -->
+            <div class="col-lg-7 reveal-on-scroll">
+                <div class="hero-badge">
+                    <span>👋</span> @ViewBag.v1
+                </div>
+
+                <h1 class="hero-title">
+                    Merhaba, Ben <span class="hero-name-gradient">@ViewBag.v2</span>.
+                </h1>
+
+                <!-- Animated Typing Text Slider -->
+                <div class="typing-container" aria-live="polite">
+                    <span id="typedText"></span><span class="typing-cursor"></span>
+                </div>
+
+                <p class="hero-desc">
+                    @ViewBag.v3
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 align-items-center mb-4">
+                    <a href="#projects" class="btn-custom-primary">
+                        <i class="bi bi-grid-fill"></i>
+                        Projelerimi İncele
+                    </a>
+                    <a href="#contact" class="btn-custom-outline">
+                        <i class="bi bi-chat-dots"></i>
+                        Benimle İletişime Geç
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="d-flex align-items-center gap-2 pt-2">
+                    <span class="text-secondary small fw-medium me-2">Bağlantılar:</span>
+                    <a href="https://github.com/ugursema" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profilim">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ugursema/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profilim">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://medium.com/@@sema1907.su" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Medium Yazılarım">
+                        <i class="bi bi-medium"></i>
+                    </a>
+                    <a href="mailto:sema1907.su@gmail.com" class="social-btn" aria-label="E-posta Gönder">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sağ tarafı ViewComponent ile çağırıyoruz -->
+            @await Component.InvokeAsync("_DefaultProfilComponentPartial")
+
+        </div>
+    </div>
+</section>

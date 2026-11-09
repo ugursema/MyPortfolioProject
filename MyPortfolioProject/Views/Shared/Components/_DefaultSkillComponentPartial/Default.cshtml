@@ -1,0 +1,22 @@
+﻿@model List<MyPortfolioProject.Entities.Skill>
+
+<!-- Infinite Soft Marquee for Technologies -->
+<div class="marquee-container">
+    <div class="marquee-track">
+        <!-- 1. Döngü: Veritabanından gelen veriler -->
+        @foreach (var item in Model)
+        {
+            <div class="marquee-item">
+                <i class="bi bi-check2-circle"></i> @item.Title
+            </div>
+        }
+
+        <!-- 2. Döngü: Sonsuz kaydırma (seamless loop) için tekrar -->
+        @foreach (var item in Model)
+        {
+            <div class="marquee-item">
+                <i class="bi bi-check2-circle"></i> @item.Title
+            </div>
+        }
+    </div>
+</div>

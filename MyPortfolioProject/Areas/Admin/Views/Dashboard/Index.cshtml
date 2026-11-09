@@ -1,0 +1,268 @@
+﻿@model MyPortfolioProject.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<!-- Sayfa Başlığı -->
+<div class="row mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+         
+        <div>
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill fw-semibold">
+                <i class="bi bi-calendar-check me-1"></i>
+                @DateTime.Now.ToString("dd MMMM yyyy")
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- 1. Üst İstatistik Kartları -->
+<div class="row g-4 mb-4">
+
+    <!-- Toplam Proje -->
+    <div class="col-xl-3 col-md-6">
+        <a href="/Admin/Project/ProjectList" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white border-start border-primary border-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted small fw-semibold text-uppercase">Toplam Proje</span>
+                        <h3 class="fw-bold mb-0 mt-2 text-dark">@Model.TotalProjectCount</h3>
+                        <small class="text-muted" style="font-size: 0.75rem;">Sistemdeki projeler</small>
+                    </div>
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-4 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-grid fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Toplam Mesaj -->
+    <div class="col-xl-3 col-md-6">
+        <a href="/Admin/Message/MessageList" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white border-start border-info border-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted small fw-semibold text-uppercase">Toplam Mesaj</span>
+                        <h3 class="fw-bold mb-0 mt-2 text-dark">@ViewBag.totalMessage</h3>
+                        <small class="text-muted" style="font-size: 0.75rem;">Tüm zamanlar</small>
+                    </div>
+                    <div class="bg-info bg-opacity-10 text-info rounded-4 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-envelope fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Okunmuş Mesaj -->
+    <div class="col-xl-3 col-md-6">
+        <a href="/Admin/Message/MessageList" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white border-start border-success border-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted small fw-semibold text-uppercase">Okunmuş Mesaj</span>
+                        <h3 class="fw-bold mb-0 mt-2 text-success">@ViewBag.readMessage</h3>
+                        <small class="text-success fw-semibold" style="font-size: 0.75rem;">İncelenenler</small>
+                    </div>
+                    <div class="bg-success bg-opacity-10 text-success rounded-4 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-envelope-check fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Okunmamış Mesaj -->
+    <div class="col-xl-3 col-md-6">
+        <a href="/Admin/Message/MessageList" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white border-start border-warning border-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted small fw-semibold text-uppercase">Okunmamış</span>
+                        <h3 class="fw-bold mb-0 mt-2 text-warning">@ViewBag.unreadMessage</h3>
+                        <small class="text-warning fw-semibold" style="font-size: 0.75rem;">Bekleyenler</small>
+                    </div>
+                    <div class="bg-warning bg-opacity-10 text-warning rounded-4 p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-envelope-exclamation fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+<!-- 2. Yetenekler ve Ziyaretçi Kartları -->
+<div class="row g-4 mb-4">
+
+    <!-- Yetenekler -->
+    <div class="col-xl-6 col-md-6">
+        <a href="/Admin/Skill/SkillList" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted small fw-semibold text-uppercase">Aktif Yetenekler / Teknolojiler</span>
+                        <h3 class="fw-bold mb-0 mt-2 text-dark">@Model.TotalSkillCount</h3>
+                        <small class="text-muted">Portfolyoda listelenen yetenek sayısı</small>
+                    </div>
+                    <div class="bg-success bg-opacity-10 text-success rounded-4 p-3 d-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="bi bi-code-slash fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Ziyaretçi Analitiği -->
+    <div class="col-xl-6 col-md-6">
+        <a href="#" class="text-decoration-none">
+            <div class="card border-0 shadow-sm rounded-4 h-100 p-3 bg-white">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <span class="text-muted small fw-semibold text-uppercase">Bu Ay Ziyaretçi Trafiği</span>
+                        <h3 class="fw-bold mb-0 mt-2 text-dark">1.284</h3>
+                        <small class="text-success fw-semibold" style="font-size: 0.8rem;">
+                            <i class="bi bi-arrow-up-short"></i>
+                            Geçen aya göre +%12 artış
+                        </small>
+                    </div>
+                    <div class="bg-indigo bg-opacity-10 text-indigo rounded-4 p-3 d-flex align-items-center justify-content-center" style="width: 55px; height: 55px; background-color: rgba(102, 16, 242, 0.1); color: #6610f2;">
+                        <i class="bi bi-eye fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+<!-- 3. Tablolar ve Yetenek Seviye Alanı -->
+
+
+    <!-- Sol Taraf: Son Eklenen Projeler -->
+    <div class="col-xl-12">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold text-dark mb-0">Son Eklenen Projeler</h5>
+                <a href="/Admin/Project/ProjectList" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                    Tümünü Gör
+                </a>
+            </div>
+
+            <hr class="text-muted opacity-25">
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light text-secondary small text-uppercase">
+                        <tr>
+                            <th class="py-3 rounded-start">#</th>
+                            <th class="py-3">Proje Adı</th>
+                            <th class="py-3">Kategori</th>
+                            <th class="py-3 text-end rounded-end">İşlem</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (ViewBag.LastProjects != null)
+                        {
+                            int count = 1;
+
+                            foreach (var item in ViewBag.LastProjects)
+                            {
+                                <tr>
+                                    <td class="fw-bold text-muted">@count</td>
+
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <span class="fw-semibold text-dark">@item.Title</span>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="badge bg-light text-dark border px-2 py-1">
+                                            @(item.Category != null ? item.Category.CategoryName : "Kategorisiz")
+                                        </span>
+                                    </td>
+
+                                    <td class="text-end">
+                                        <a href="/Admin/Project/UpdateProject/@item.ProjectId"
+                                           class="btn btn-sm btn-light text-primary rounded-3 p-2"
+                                           title="Düzenle">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                count++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center text-muted py-4">
+                                    Henüz proje eklenmemiş.
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+   @*  <!-- Sağ Taraf: Yetenekler ve Yetkinlik Dağılımı -->
+    <div class="col-xl-4">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white d-flex flex-column justify-content-between">
+
+            <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold text-dark mb-0">Yetenek Yetkinlikleri</h5>
+                    <span class="text-muted small">Teknoloji Seviyeleri</span>
+                </div>
+                <hr class="text-muted opacity-25">
+
+                <p class="text-muted small mb-4">Portfolyonda yer alan başlıca yeteneklerin ve beceri oranlarının dağılımı:</p>
+
+                <!-- Yetenekler Listesi (Dinamik) -->
+                @if (ViewBag.SkillList != null)
+                {
+                    foreach (var skill in ViewBag.SkillList)
+                    {
+                        int percentage = 85;
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1 small fw-semibold text-dark">
+                                <span>@skill.Title</span>
+                                <span>%@percentage</span>
+                            </div>
+                            <div class="progress rounded-pill" style="height: 8px;">
+                                <div class="progress-bar bg-primary"
+                                     role="progressbar"
+                                     style="width: @percentage%">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center text-muted py-4 small">Henüz yetenek verisi bulunamadı.</div>
+                }
+
+            </div>
+
+            <div class="mt-4 pt-3 border-top text-center">
+                <a href="/Admin/Skill/SkillList"
+                   class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-semibold py-2">
+                    <i class="bi bi-code-slash me-1"></i>
+                    Tüm Yetenekleri Yönet
+                </a>
+            </div>
+
+        </div>
+    </div>
+ *@

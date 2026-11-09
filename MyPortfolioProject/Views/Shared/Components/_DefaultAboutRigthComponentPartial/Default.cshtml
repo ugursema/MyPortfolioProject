@@ -1,0 +1,52 @@
+﻿@model List<MyPortfolioProject.Entities.AboutRight>
+
+<!-- Right: Biography & Highlight Cards -->
+<div class="col-lg-7 reveal-on-scroll">
+
+    <div class="pe-lg-3">
+
+        @foreach (var item in Model)
+        {
+            <p class="fs-6 text-secondary mb-3">
+                @item.Title
+            </p>
+            <p class="fs-6 text-secondary mb-3">
+                @item.Description2
+            </p>
+            <p class="fs-6 text-secondary mb-4">
+                @item.Description3
+            </p>
+        }
+        <!-- Three Small Highlight Cards -->
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="highlight-card">
+                    <div class="float-icon-box bg-icon-purple mb-3">
+                        <i class="bi bi-cpu"></i>
+                    </div>
+                    <h5 class="fs-6 fw-bold mb-1">Modern Teknolojiler</h5>
+                    <p class="text-secondary small mb-0">Güncel .NET ve web ekosistemi ile ölçeklenebilir kod mimarisi.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="highlight-card">
+                    <div class="float-icon-box bg-icon-mint mb-3">
+                        <i class="bi bi-puzzle"></i>
+                    </div>
+                    <h5 class="fs-6 fw-bold mb-1">Problem Çözme</h5>
+                    <p class="text-secondary small mb-0">Algoritmik bakış açısıyla karmaşık gereksinimleri sadeleştirme.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="highlight-card">
+                    <div class="float-icon-box bg-icon-blue mb-3">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </div>
+                    <h5 class="fs-6 fw-bold mb-1">Sürekli Gelişim</h5>
+                    <p class="text-secondary small mb-0">Teknolojiyi yakından takip ederek her gün yeni yetkinlikler edinme.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

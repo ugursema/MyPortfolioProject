@@ -1,0 +1,49 @@
+﻿@model MyPortfolioProject.Entities.About
+@{
+    ViewData["Title"] = "Hakkımda Bilgisini Güncelle";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card border-0 shadow-sm rounded-4 p-4">
+    <h5 class="fw-bold mb-4">Hakkımda Bilgisini Güncelle</h5>
+
+    <form method="post">
+        @*  hidden ile id gizli tutuluyor *@
+        <input type="hidden" asp-for="AboutId" />
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Ad Soyad</label>
+            <input type="text" asp-for="NameSurname" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Unvan / Uzmanlık (Expert)</label>
+            <input type="text" asp-for="Expert" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Konum</label>
+            <input type="text" asp-for="Location" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">E-posta</label>
+            <input type="email" asp-for="Email" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Çalışma Durumu (Open To Work)</label>
+            <input type="text" asp-for="OpenToWork" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Açıklama / Biyografi</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success px-4">
+            <i class="bi bi-save me-1"></i> Değişiklikleri Kaydet
+        </button>
+        <a href="/Admin/About/AboutList" class="btn btn-light border px-4 ms-2">İptal</a>
+    </form>
+</div>

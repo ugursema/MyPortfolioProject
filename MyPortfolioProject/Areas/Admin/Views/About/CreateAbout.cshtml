@@ -1,0 +1,46 @@
+﻿@model MyPortfolioProject.Entities.About
+@{
+    ViewData["Title"] = "Yeni Hakkımda Bilgisi Ekle";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card border-0 shadow-sm rounded-4 p-4">
+    <h5 class="fw-bold mb-4">Yeni Hakkımda Bilgisi Ekle</h5>
+
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Ad Soyad</label>
+            <input type="text" asp-for="NameSurname" class="form-control" placeholder="Adınızı ve soyadınızı giriniz..." required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Unvan / Uzmanlık (Expert)</label>
+            <input type="text" asp-for="Expert" class="form-control" placeholder="Örn: Full Stack Developer" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Konum</label>
+            <input type="text" asp-for="Location" class="form-control" placeholder="Örn: İstanbul, Türkiye" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">E-posta</label>
+            <input type="email" asp-for="Email" class="form-control" placeholder="E-posta adresinizi giriniz..." required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Çalışma Durumu (Open To Work)</label>
+            <input type="text" asp-for="OpenToWork" class="form-control" placeholder="Örn: Aktif İş Arıyor / Müsait" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Açıklama / Biyografi</label>
+            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Kendinizden kısaca bahsedin..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary px-4">
+            <i class="bi bi-check-lg me-1"></i> Kaydet
+        </button>
+        <a href="/Admin/About/AboutList" class="btn btn-light border px-4 ms-2">İptal</a>
+    </form>
+</div>

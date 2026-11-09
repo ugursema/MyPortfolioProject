@@ -1,0 +1,39 @@
+﻿@model MyPortfolioProject.Entities.Education
+@{
+    ViewData["Title"] = "Eğitim Bilgisini Güncelle";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card border-0 shadow-sm rounded-4 p-4">
+    <h5 class="fw-bold mb-4">Eğitim Bilgisini Güncelle</h5>
+
+    <form method="post">
+        @* hidden ile id gizli tutuluyor *@
+        <input type="hidden" asp-for="EducationId" />
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Okul / Kurs Adı</label>
+            <input type="text" asp-for="Title" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Bölüm / Kategori (SubTitle)</label>
+            <input type="text" asp-for="SubTitle" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Açıklama</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Tarih / Süre (Duration)</label>
+            <input type="text" asp-for="Duration" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-success px-4">
+            <i class="bi bi-save me-1"></i> Değişiklikleri Kaydet
+        </button>
+        <a href="/Admin/Education/EducationList" class="btn btn-light border px-4 ms-2">İptal</a>
+    </form>
+</div>

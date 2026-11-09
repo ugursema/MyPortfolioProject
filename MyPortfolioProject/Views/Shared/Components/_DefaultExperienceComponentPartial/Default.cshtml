@@ -1,0 +1,88 @@
+﻿@model List<MyPortfolioProject.Entities.Experience>
+
+<!-- Work Experience Section -->
+<section id="experience">
+    <div class="container">
+        <div class="text-center mb-5 reveal-on-scroll">
+            <span class="section-eyebrow">PROFESYONEL YOLCULUK</span>
+            <h2 class="section-title">Deneyimlerim</h2>
+            <p class="section-subtitle">Gerçek dünya problemlerini çözerken edindiğim tecrübeler.</p>
+        </div>
+
+        <div class="timeline-container">
+            @{
+                int index = 0;
+            }
+            @foreach (var item in Model)
+            {
+                index++;
+                bool isEven = (index % 2 == 0); // Çift sıra mu (2, 4, 6...)
+
+                <div class="timeline-item row align-items-center g-4 reveal-on-scroll">
+
+                    @if (!isEven)
+                    {
+                        <!-- TEK SAYILI SIRA (Sol İçerik, Sağ Slogan) -->
+                        <div class="col-lg-6 timeline-left order-2 order-lg-1">
+                            <div class="timeline-content-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge-year bg-icon-purple">
+                                        <i class="bi bi-briefcase"></i> @item.Duration
+                                    </span>
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 small">@item.WorkType</span>
+                                </div>
+                                <h4 class="fs-5 fw-bold mb-1">@item.title</h4>
+                                <div class="text-primary fw-semibold small mb-3">@item.CompanyName</div>
+                                <div class="text-secondary small ps-3 mb-3" style="line-height: 1.6;">
+                                    @Html.Raw(item.Description)
+                                </div>
+                                <div>
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">ASP.NET Core</span>
+                                    <span class="tech-tag">SQL Server</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-marker">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <div class="col-lg-6 timeline-right order-1 order-lg-2 d-none d-lg-block">
+                            <div class="text-secondary small fst-italic">@item.SideTitle</div>
+                        </div>
+                    }
+                    else
+                    {
+                        <!-- ÇİFT SAYILI SIRA (Sol Slogan, Sağ İçerik) -->
+                        <div class="col-lg-6 timeline-left d-none d-lg-block">
+                            <div class="text-secondary small fst-italic">@item.SideTitle</div>
+                        </div>
+                        <div class="timeline-marker">
+                            <i class="bi bi-pc-display"></i>
+                        </div>
+                        <div class="col-lg-6 timeline-right">
+                            <div class="timeline-content-card">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge-year bg-icon-blue">
+                                        <i class="bi bi-briefcase"></i> @item.Duration
+                                    </span>
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1 small">@item.WorkType</span>
+                                </div>
+                                <h4 class="fs-5 fw-bold mb-1">@item.title</h4>
+                                <div class="text-primary fw-semibold small mb-3">@item.CompanyName</div>
+                                <div class="text-secondary small ps-3 mb-3" style="line-height: 1.6;">
+                                    @Html.Raw(item.Description)
+                                </div>
+                                <div>
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            }
+        </div>
+    </div>
+</section>

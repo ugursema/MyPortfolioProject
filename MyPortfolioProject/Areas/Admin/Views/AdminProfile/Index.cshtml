@@ -1,0 +1,63 @@
+﻿@model MyPortfolioProject.Entities.Profile
+
+@{
+    ViewData["Title"] = "Profil Görsel ve Rozet Yönetimi";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Hero Görsel ve Rozet Alanı Düzenleme</h6>
+
+                <!-- enctype="multipart/form-data" IFormFile için zorunludur -->
+                <form method="post" enctype="multipart/form-data">
+
+                    <input type="hidden" asp-for="ProfileId" />
+                    <input type="hidden" asp-for="ImageUrl" /> <!-- Eski resmi kaybetmemek için -->
+
+                    <h6 class="mb-3">Yüzen Rozet (Floating Cards) Bilgileri</h6>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Sol Üst Rozet Başlığı</label>
+                            <input type="text" class="form-control" asp-for="BadgeTopTitle" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Sol Üst Rozet Alt Metni</label>
+                            <input type="text" class="form-control" asp-for="BadgeTopSubtitle" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Sağ Alt Rozet Başlığı</label>
+                            <input type="text" class="form-control" asp-for="BadgeBottomTitle" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Sağ Alt Rozet Alt Metni</label>
+                            <input type="text" class="form-control" asp-for="BadgeBottomSubtitle" />
+                        </div>
+                    </div>
+
+                    <hr />
+                    <div class="mb-3">
+                        <label class="form-label">Yeni Profil Görseli Seç</label>
+                        <input type="file" class="form-control" name="imageFile" />
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model?.ImageUrl))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label d-block">Mevcut Görsel:</label>
+                            <img src="@Model.ImageUrl" alt="Profil Resmi" style="width: 120px; height: 120px; object-fit: cover; border-radius: 10px;" />
+                        </div>
+                    }
+
+                    <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

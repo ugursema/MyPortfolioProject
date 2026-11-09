@@ -1,0 +1,20 @@
+﻿@model MyPortfolioProject.Entities.Skill
+@{
+    ViewData["Title"] = "Yetenek Ekle";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+
+}
+
+
+<form method="post">
+    <div class="container">
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Değer</label>
+        <input type="text" asp-for="Value" class="form-control" />
+        <br />  
+        <button class="btn btn-info">Deneyimi Kaydet</button>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿@model MyPortfolioProject.Entities.Profile
+
+<!-- Right Visual with Portrait & Floating Badges -->
+<div class="col-lg-5 reveal-on-scroll">
+    <div class="hero-image-wrapper">
+        <!-- Floating badge top left -->
+        <div class="floating-card float-top-left">
+            <div class="float-icon-box bg-icon-purple">
+                <i class="bi bi-code-slash"></i>
+            </div>
+            <div>
+                <div class="fw-bold small text-dark">@Model?.BadgeTopTitle</div>
+                <div class="text-secondary" style="font-size: 0.72rem;">@Model?.BadgeTopSubtitle</div>
+            </div>
+        </div>
+
+        <!-- Main Portrait -->
+        <div class="hero-image-frame">
+            <img src="@Model?.ImageUrl" alt="Sema UĞUR - Profil Fotoğrafı" loading="lazy">
+        </div>
+
+        <!-- Floating badge bottom right -->
+        <div class="floating-card float-bottom-right">
+            <div class="float-icon-box bg-icon-mint">
+                <i class="bi bi-laptop"></i>
+            </div>
+            <div>
+                <div class="fw-bold small text-dark">@Model?.BadgeBottomTitle</div>
+                <div class="text-secondary" style="font-size: 0.72rem;">@Model?.BadgeBottomSubtitle</div>
+            </div>
+        </div>
+    </div>
+</div>
